@@ -1,0 +1,16 @@
+.button {
+  &.is-gray {
+    background-color: #aaa;
+    color: #fff;
+    border: 1px solid #aaa;
+
+    &:hover {
+      background-color: $danger;
+      border-color: $danger;
+    }
+  }
+  &.is-block {
+    width: 100%;
+    text-align: center;
+  }
+}

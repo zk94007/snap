@@ -1,0 +1,138 @@
+.no-wrap {
+  white-space: nowrap;
+}
+
+.is-positioned-relatively {
+  position: relative;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #ddd;
+}
+
+.icon.is-circle {
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  border-radius: 50%;
+  background-color: $primary;
+  color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .25);
+
+  &.is-success {
+    background-color: $success;
+  }
+
+  &.is-danger {
+    background-color: $danger;
+  }
+
+  &.is-info {
+    background-color: $info;
+  }
+
+  &.is-warning {
+    background-color: $warning;
+  }
+}
+
+.has-text-vertically-centered {
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+@each $name, $color in $theme-colors {
+  .bg-#{$name} {
+    background-color: $color;
+    color: color-yiq($color);
+  }
+
+  .text-#{$name} {
+    color: $color;
+  }
+}
+
+.bg-dark {
+  a {
+    color: $primary;
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+.text-muted {
+  color: #6c757d;
+}
+
+.text-dark-muted {
+  color: lighten(#adb5bd, 15%);
+}
+
+.text-small {
+  font-size: 14px!important;
+}
+
+.elevation-1 {
+  box-shadow: $box-shadow;
+}
+
+.elevation-2 {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.elevation-3 {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.elevation-4 {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.elevation-5 {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.font-weight-light {
+  font-weight: $weight-light!important;
+}
+
+.font-weight-bold {
+  font-weight: $weight-bold!important;
+}
+
+.font-weight-normal {
+  font-weight: normal!important;
+}
+
+.invisible-scrollbar::-webkit-scrollbar {
+  visibility: hidden;
+}
+
+.invisible-scrollbar:hover::-webkit-scrollbar {
+  visibility: visible;
+}
+
+.invisible-scrollbar {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.is-rounded {
+  border-radius: 4px;
+}
+
+.is-borderless {
+  border-width: 0!important;
+}

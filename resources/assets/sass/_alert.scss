@@ -1,0 +1,56 @@
+.alert {
+  padding: 1rem;
+  background-color: #fff;
+  margin-bottom: 1rem;
+  border-radius: $radius;
+
+  a {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  &.is-danger {
+    background-color: $danger;
+    color: #fff;
+  }
+
+  &.is-success {
+    background-color: $success;
+    color: #fff;
+  }
+
+  &.is-warning {
+    background-color: $warning;
+    color: #212121;
+
+    a {
+      color: #212121;
+      text-decoration: underline;
+    }
+  }
+}
+
+.push-notification {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  right: 1em;
+  z-index: 1100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, top 1s ease-in-out, margin-top .25s linear;
+
+  &.show {
+    visibility: visible;
+    opacity: 1;
+    top: $navbar-height + 1rem;
+  }
+
+  &.hiding {
+    visibility: visible;
+    opacity: 0;
+    top: -100%;
+  }
+}
+

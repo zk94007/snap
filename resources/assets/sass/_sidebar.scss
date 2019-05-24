@@ -1,0 +1,172 @@
+.sidebar {
+  width: $sidebar-width;
+  position: absolute;
+  top: $navbar-height;
+  left: 0;
+  transform: translate(-$sidebar-width, 0);
+  bottom: 0;
+  background: $body-bg;
+  box-shadow: 3px 0 3px rgba(0, 0, 0, .16);
+  z-index: 5;
+  max-height: 100%;
+  overflow-y: auto;
+
+  @include mobile() {
+    &,
+    .sidebar-visible & {
+      //left: -$sidebar-width;
+    }
+  }
+
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.sidebar-content-container {
+  position: relative;
+  height: 100%;
+
+  .close {
+    display: block;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background: rgba(255, 255, 255, .9);
+    width: 50px;
+    height: 30px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+    border-radius: 3px;
+    text-align: center;
+    color: #555;
+    z-index: 3100;
+    &:hover {
+      background-color: rgba(255, 255, 255, 1);
+      color: #222;
+    }
+    > .fa {
+      line-height: 28px;
+      font-size: 1rem;
+    }
+  }
+}
+
+.sidebar-img {
+  width: 100%;
+  height: 200px;
+  background: no-repeat center center;
+  background-size: 300px;
+  position: relative;
+  transition: background-size 250ms linear;
+  &:hover {
+    background-size: 350px;
+  }
+}
+
+.sidebar-img-overlay {
+  @include flexbox();
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.25s ease-in-out;
+  opacity: 0;
+  z-index: 2100;
+  color: #fff;
+
+  &:hover {
+    opacity: 1;
+    color: #fff;
+  }
+
+  .fa {
+    font-size: 2rem;
+  }
+}
+
+.sidebar-icons-container {
+  .card-footer > a {
+    @extend .card-footer-item;
+    margin: 0 !important;
+    color: #618293;
+
+    &.is-danger {
+      color: $danger;
+    }
+
+    &.is-success {
+      color: $success;
+    }
+
+    &:hover {
+      color: darken(#618293, 20%);
+    }
+  }
+  border-bottom: 1px solid $laravel-border-color;
+  background-color: #fff;
+}
+
+.sidebar-icon {
+  margin-left: -20px;
+  > .fa {
+    font-size: 1.3rem;
+    margin-top: 5px;
+  }
+  > span {
+    display: inline-block;
+    margin-left: .5rem;
+    margin-top: 4px;
+    font-size: .9rem;
+  }
+}
+
+.sidebar-content {
+  padding: 1rem;
+  padding-bottom: 0;
+  background-color: #fff;
+  border-bottom: 1px solid $laravel-border-color;
+
+  .title {
+    margin-bottom: 1rem;
+  }
+}
+
+.sidebar-item {
+  margin: 0 -1rem;
+  padding: .5rem 1rem;
+  border-bottom: 1px solid $laravel-border-color;
+  &:first-of-type {
+    border-top: 1px solid $laravel-border-color;
+  }
+  &:last-of-type {
+    border-bottom: none;
+  }
+  &:nth-child(even) {
+    background-color: $body-bg; //lighten($laravel-border-color, 9%);
+  }
+}
+
+.sidebar-bottom-bar {
+  position: relative;
+  background-color: white;
+  box-shadow: 0 -1px 1px rgba(10,10,10,.1);
+  text-align: center;
+  padding: 15px 0;
+  .icon {
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+    left: 10px;
+  }
+
+  > a {
+    color: #777;
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.opacity-05 {
+  opacity: 0.5 !important;
+}

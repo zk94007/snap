@@ -1,0 +1,234 @@
+.map-page {
+  .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+.navbar {
+  z-index: 900;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  background-color: $primary;
+
+  > .container {
+    //@extend .navbar;
+    box-shadow: none;
+  }
+
+  .navbar-item,
+  .has-dropdown > .navbar-link {
+    color: white !important;
+    &:after {
+      border-color: white;
+    }
+  }
+
+  .navbar-item.has-dropdown {
+    @include until($desktop) {
+      > a.navbar-link {
+        color: #4a4a4a !important;
+      }
+      &:hover {
+        > a.navbar-link {
+          background-color: whitesmoke !important;
+        }
+      }
+    }
+
+    &:hover {
+      > .navbar-link {
+        background-color: darken($primary, 5%);
+      }
+      .navbar-item {
+        background-color: white;
+        color: #4a4a4a !important;
+        &:hover {
+          background-color: whitesmoke;
+        }
+      }
+    }
+  }
+
+  .container.is-fluid {
+    width: 100%;
+  }
+
+  a.navbar-item {
+    border-bottom: 2px solid transparent;
+
+    &.is-active,
+    &:hover {
+      color: white;
+      background: darken($primary, 5%);
+    }
+  }
+
+  @include tablet-only() {
+    > .container {
+      //width: 100%;
+    }
+  }
+
+  .logo-img {
+    margin-right: 5px;
+    height: $navbar-height / 2;
+    width: auto;
+    line-height: $navbar-height;
+  }
+
+  .navbar-item:last-of-type {
+    .navbar-dropdown {
+      left: auto;
+      right: 0;
+    }
+  }
+}
+
+.navbar-brand {
+  overflow: hidden;
+  > .navbar-item {
+    font-size: 1.6rem;
+    font-weight: 400;
+    > b {
+      font-weight: 700;
+    }
+  }
+  > small.navbar-item {
+    font-size: 14px;
+  }
+}
+
+.navbar-burger {
+  > span {
+    background-color: white;
+  }
+  &:hover {
+    background-color: darken($primary, 5%);
+  }
+}
+
+@include until($desktop) {
+  .navbar .navbar-menu {
+    background-color: white !important;
+    margin: 0 -16px;
+
+    .navbar-item {
+      color: #4a4a4a !important;
+    }
+
+    .navbar-end:first-of-type {
+      @include flexbox();
+      @include justify-content(center);
+      //border-bottom: 1px solid $laravel-border-color;
+      .navbar-item {
+        border-bottom-width: 0;
+      }
+    }
+
+    .navbar-end a.navbar-item {
+      //border-bottom: 1px solid $laravel-border-color;
+      &:last-of-type {
+        border-bottom: 0;
+      }
+      &.is-active,
+      &:hover {
+        background-color: #f4f4f4 !important;
+      }
+    }
+  }
+}
+
+.navbar.home-nav,
+.navbar.home-nav > .container {
+  position: relative;
+  background-color: transparent !important;
+  box-shadow: none;
+
+  .has-dropdown:hover {
+    > .navbar-link {
+      background-color: rgba(255, 255, 255, .1);
+    }
+
+    .navbar-item {
+      background-color: white;
+      color: #4a4a4a !important;
+      &:hover {
+        background-color: whitesmoke;
+      }
+    }
+  }
+
+  .navbar-end {
+    @include mobile() {
+      a.navbar-item {
+        color: #777 !important;
+        &.is-active,
+        &:hover {
+          @include mobile() {
+            color: #000 !important;
+          }
+        }
+      }
+    }
+  }
+
+  a.navbar-item,
+  .navbar-burger {
+    &.is-active {
+      @include from($desktop) {
+        border-bottom-color: white !important;
+      }
+
+      background-color: transparent !important;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .navbar-brand > .navbar-item {
+    font-size: 1.6rem;
+    padding-left: 0;
+    &:hover {
+      border-bottom-color: transparent !important;
+      background-color: transparent !important;
+    }
+  }
+
+  .logo-img {
+    height: 48px !important;
+    max-height: 48px;
+    margin-right: 10px;
+  }
+}
+
+.tabs {
+  background-color: white;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+  //padding: 0 0 1px 0;
+  //border-bottom: 1px solid $laravel-border-color;
+  a.is-active {
+    border-bottom: 1px solid $primary;
+    color: $primary;
+  }
+}
+
+.home-tabs {
+  margin: -30px -16px 0 -16px;
+  a {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+a.sortable-th {
+  color: #444;
+  @include align-items(center);
+
+  &:hover {
+    color: $primary;
+  }
+}

@@ -1,0 +1,148 @@
+.relative-block {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+a.card-header-title {
+  &:hover {
+    color: $primary;
+  }
+}
+
+.card-header-icon {
+  position: relative;
+}
+
+.card-header-icon.is-clear {
+  color: #aaa;
+  padding-right: 0.25rem;
+  padding-left: 0.25rem;
+  z-index: 11;
+  margin-right: .2rem;
+
+  &.is-active,
+  &:hover {
+    .fa-times {
+      color: $danger;
+    }
+
+    .fa-check {
+      color: $primary;
+    }
+  }
+}
+
+.fade {
+  transition: opacity 1s ease;
+  opacity: 0;
+
+  &.in {
+    opacity: 1;
+  }
+}
+
+.card-slide-content {
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f7f7f7;
+  //z-index: 20;
+  overflow-y: auto !important;
+  -webkit-transform: translate(0, 130%);
+  -moz-transform: translate(0, 130%);
+  -ms-transform: translate(0, 130%);
+  -o-transform: translate(0, 130%);
+  transform: translate(0, 130%);
+  border-top: 1px solid $border;
+
+  &.show {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+
+  .close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(10, 10, 10, 0.2);
+    color: #555;
+    z-index: 10;
+    text-align: center;
+    > .fa {
+      line-height: 1;
+    }
+  }
+
+  .card-textarea-sm {
+    min-height: 80px;
+    max-height: 80px;
+    resize: none;
+  }
+}
+
+.card-slide-container {
+  max-height: 100%;
+  overflow-y: auto !important;
+  overflow-x: hidden;
+}
+
+.card-footer,
+.card-footer-item {
+  background-color: #fff;
+  z-index: 10;
+}
+
+.card-footer-item {
+  position: relative;
+}
+
+.marks-section {
+  border-bottom: 1px solid #dbdbdb;
+  + .card-content {
+    padding-top: 1rem;
+  }
+}
+
+.observation-tools {
+  > a {
+    margin-right: .5rem;
+  }
+}
+
+.box {
+  @include mobile() {
+    overflow-x: auto;
+  }
+}
+
+.card-equal-height {
+  @include flexbox();
+  @include flex-direction(column);
+  height: 100%;
+  .card-footer {
+    margin-top: auto;
+  }
+}
+
+.img-bg-zoom {
+  transition: background-size 250ms linear;
+  &:hover {
+    background-size: 110%;
+  }
+}
+
+.z-10 {
+  z-index: 10!important;
+}

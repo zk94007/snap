@@ -1,0 +1,88 @@
+// Body
+$body-bg: #f5f8fa;
+
+// Sidebar
+$sidebar-width: 300px;
+
+// App Footer
+$app-footer-height: 3em;
+$bottom-bar-height: 115px;
+
+// Borders
+$radius-small: 2px;
+$radius: 2px;
+$radius-large: 2px;
+$laravel-border-color: darken($body-bg, 10%);
+$list-group-border: $laravel-border-color;
+$navbar-default-border: $laravel-border-color;
+$panel-default-border: $laravel-border-color;
+$panel-inner-border: $laravel-border-color;
+
+// Brands
+$primary: #2A9D8F;
+$info: #4d7ec8; //#00c0ef;
+$success: #2ab27b;
+$warning: #f39c12; //#cbb956;
+$danger: #bf5329;
+$dark: #1F2D3D;
+$lighter-dark: lighten($dark, 5%);
+$white: #fff;
+
+$link: $primary;
+
+$theme-colors: (
+        primary: $primary,
+        info: $info,
+        success: $success,
+        warning: $warning,
+        danger: $danger,
+        dark: $dark,
+        white: $white,
+);
+
+// Typography
+$font-family-sans-serif: "Raleway", sans-serif;
+$font-size-base: 14px;
+$line-height-base: 1.6;
+$text-color: #636b6f;
+
+// Navbar
+$navbar-height: 3.5rem;
+
+// Buttons
+$btn-default-color: $text-color;
+
+// Inputs
+$input-border: lighten($text-color, 40%);
+$input-border-focus: lighten($primary, 25%);
+$input-color-placeholder: lighten($text-color, 30%);
+
+// Panels
+$panel-default-heading-bg: #fff;
+
+// Titles
+$title-weight: normal;
+
+// The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
+$yiq-contrasted-threshold: 150 !default;
+
+// Customize the light and dark text colors for use in our YIQ color contrast function.
+$yiq-text-dark: $dark !default;
+$yiq-text-light: #ffffff !default;
+
+$box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+// Responsiveness
+
+// The container horizontal gap, which acts as the offset for breakpoints
+$gap: 32px;
+// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+$tablet: 769px;
+// 960px container + 4rem
+$desktop: 960px + (2 * $gap);
+// 1152px container + 4rem
+$widescreen: 1152px + (2 * $gap);
+$widescreen-enabled: true;
+// 1344px container + 4rem
+$fullhd: 1344px + (2 * $gap);
+$fullhd-enabled: true !default

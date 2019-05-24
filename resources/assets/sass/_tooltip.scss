@@ -1,0 +1,98 @@
+.tooltip {
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.tooltip .tooltip-text {
+  opacity: 0;
+  transition: opacity 0.25s linear;
+  width: 100%;
+  min-width: 120px;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  visibility: hidden;
+  font-size: 1rem !important;
+  font-weight: $weight-normal !important;
+  white-space: normal !important;
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  .button & {
+    padding: 10px;
+  }
+}
+
+.tooltip .tooltip-text::after {
+  content: " ";
+  position: absolute;
+  border-width: 5px;
+  border-style: solid;
+}
+
+.tooltip {
+  position: static;
+  &.top {
+    .tooltip-text {
+      bottom: 110%;
+      margin-left: -60px;
+      left: 50%;
+      &::after {
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-color: #222 transparent transparent transparent;
+      }
+    }
+  }
+
+  &.bottom {
+    .tooltip-text {
+      bottom: 150%;
+      margin-left: -50%;
+      left: 50%;
+      &::after {
+        top: 100%;
+        border-color: #222 transparent transparent transparent;
+      }
+    }
+  }
+
+  &.left {
+    .tooltip-text {
+      top: 0;
+      right: 110%;
+      margin-top: -8px;
+      &::after {
+        top: 50%;
+        margin-top: -5px;
+        left: 100%;
+        border-color: transparent transparent transparent #222;
+      }
+    }
+  }
+
+  &.right {
+    .tooltip-text {
+      bottom: 150%;
+      &::after {
+        top: 100%; /* At the bottom of the tooltip */
+        border-color: #222 transparent transparent transparent;
+      }
+    }
+  }
+}
+
+.card-footer-z-index {
+  &,
+  > a {
+    //z-index: 1000;
+  }
+}

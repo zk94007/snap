@@ -1,0 +1,117 @@
+.input[type="search"] {
+  border-radius: $radius !important;
+}
+
+.input,
+.textarea {
+  box-shadow: none;
+}
+
+.checkbox-container {
+  box-shadow: none; //0 2px 3px rgba(10, 10, 10, 0.1);
+  border: 1px solid #dbdbdb;
+  border-bottom: 0;
+  border-radius: $radius;
+}
+
+.checkbox-button {
+  border-radius: 0;
+  border: 0;
+  border-bottom: 1px solid #dbdbdb;
+  background: #eee;
+
+  &:first-of-type {
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+  }
+
+  &:last-of-type {
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+  }
+
+  &:hover {
+    box-shadow: none;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: none;
+    border-color: #dbdbdb;
+  }
+
+  .icon {
+    margin-right: .5rem;
+    color: #aaa;
+  }
+
+  &.is-active {
+    background: #fff;
+    box-shadow: none;
+    border-color: #dedede;
+    .icon {
+      color: $primary;
+    }
+    &:hover {
+      background: #f7f7f7;
+    }
+  }
+}
+
+.buttons-group {
+  .button {
+    margin-right: .5rem;
+  }
+}
+
+.field.is-horizontal {
+  .label {
+    line-height: 2rem;
+  }
+
+  &.has-medium-label {
+    .field-label {
+      max-width: 60px;
+    }
+  }
+}
+
+.button-select {
+  background-color: whitesmoke;
+  white-space: normal !important;
+  height: auto;
+  line-height: 1.5;
+
+  .fa {
+    color: #aaa;
+  }
+
+  &.is-selected {
+    background-color: #fff;
+    border-color: $primary;
+    &,
+    .fa {
+      color: $primary;
+    }
+  }
+}
+
+.bordered {
+  border: 1px solid $border;
+  border-radius: $radius;
+  padding: 1rem;
+}
+
+.select.is-full-width {
+  &,
+  > select {
+    width: 100%;
+  }
+}
+
+.select {
+  &,
+  select {
+    max-width: 100%;
+  }
+}

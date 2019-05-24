@@ -1,0 +1,70 @@
+#map {
+  position: absolute;
+  top: $navbar-height;
+  left: $sidebar-width;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  @include mobile() {
+    left: 0;
+  }
+}
+
+#map2 {
+  position: absolute;
+  top: $navbar-height;
+  left: 0;
+  bottom: $bottom-bar-height;
+  right: 0;
+  background-color: #fff;
+  @include mobile() {
+    &,
+    .sidebar-visible & {
+      left: 0;
+    }
+  }
+}
+
+.callout {
+  font-weight: normal;
+}
+
+.reset-map-button,
+.filters-button {
+  position: absolute;
+  top: $navbar-height + 1rem;
+  left: 10px;
+  background: #fff;
+  border-radius: $radius;
+  z-index: 20;
+  font-size: 14px;
+  border: 0;
+  box-shadow: 0 3px 2px rgba(10, 10, 10, .1) !important;
+  height: 2.5em;
+  font-weight: bold;
+  padding: 0 15px;
+
+  &:hover {
+    background: #ddd;
+    color: #000;
+  }
+
+  .sidebar-visible & {
+    left: $sidebar-width + 10px;
+  }
+
+  @include mobile() {
+    left: 10px;
+    .sidebar-visible & {
+      left: $sidebar-width + 10px;
+    }
+  }
+}
+
+.reset-map-button {
+  top: $navbar-height + 4rem;
+}
+
+.sidebar-filters {
+  padding: 1rem;
+}
